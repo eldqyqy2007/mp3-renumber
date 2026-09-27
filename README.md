@@ -1,6 +1,17 @@
-# MP3 Renumber Tool
+<p align="center">
+  <img src="./assets/banner.svg" alt="MP3 Renumber banner" width="100%">
+</p>
 
-A small, dependency-free command-line tool that **cleans and renumbers MP3 file names** in a folder. It strips any old numbering, sorts the files in natural order, and adds a fresh sequential prefix starting from any number you choose, with any padding width you choose.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?labelColor=555" alt="license: MIT"></a>
+  <img src="https://img.shields.io/badge/python-3.6%2B-yellow?labelColor=555&logo=python&logoColor=white" alt="python: 3.6+">
+  <img src="https://img.shields.io/badge/dependencies-none-brightgreen?labelColor=555" alt="dependencies: none">
+  <img src="https://img.shields.io/badge/status-stable-success?labelColor=555" alt="status: stable">
+</p>
+
+# MP3 Renumber
+
+A small, dependency-free command-line tool that **cleans and renumbers MP3 file names** in a folder. It strips any old numbering, sorts the files in natural order, and adds a fresh sequential prefix starting from any number you choose, with any padding width you choose. Every change is shown in a **preview** before anything is renamed.
 
 ```
 03 - My Song.mp3   →   007 - My Song.mp3
@@ -8,6 +19,29 @@ My Song 12.mp3     →   008 - My Song.mp3
 ```
 
 Ideal for lecture series, audiobooks, podcasts, and any collection where file order matters (for example, playing in the right order on a phone or car stereo).
+
+---
+
+## Table of contents
+
+- [Why this tool](#why-this-tool)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How it works](#how-it-works)
+- [Honest limitations](#honest-limitations)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Why this tool
+
+Downloaded audio series rarely have clean, consistent file names. Numbers show up at the start, in the middle, wrapped in brackets, or not at all — and players sort inconsistently as a result. Renaming a large folder by hand is slow and error-prone.
+
+This tool automates that cleanup in one pass: strip whatever numbering exists, re-sort the files the way a person actually reads them (natural order, not plain alphabetical), and apply a single, consistent numbering scheme — while always showing a full preview first, since renaming a folder is not something you want to get wrong.
 
 ---
 
@@ -97,7 +131,7 @@ Answer `n` at the confirmation prompt to cancel; no file is changed.
 
 ---
 
-## How It Works
+## How it works
 
 1. **Scan** – collects all files ending in `.mp3` (case-insensitive) in the chosen folder. Sub-folders are not searched.
 2. **Sort** – orders them with a natural sort, splitting each name into text and number parts.
@@ -119,16 +153,15 @@ Answer `n` at the confirmation prompt to cancel; no file is changed.
 
 ---
 
-## Important Notes
+## Honest limitations
 
-> **Always read the preview carefully.** The tool shows exactly what will change and only proceeds after you type `y`. Once confirmed, files are renamed in place and there is **no undo**, so consider working on a **copy** of your folder the first time you use it.
-
-- **Every standalone number is removed**, not just the leading one. A name like `Lecture 5 - Part 2` becomes `Lecture Part`. This is by design, and the preview lets you spot it before anything changes. Cancel with `n` if your titles contain numbers you want to keep (years, episode numbers, etc.).
+- **Every standalone number is removed, not just the leading one.** A name like `Lecture 5 - Part 2` becomes `Lecture Part`. The preview lets you catch this before confirming — cancel with `n` if your titles contain numbers you want to keep (years, episode numbers, and so on).
 - **Separators inside a name may be merged.** Removing a number from the middle of a name can also drop the dash next to it (`Cool - Track 05` → `Cool Track`).
 - **A name made only of numbers** (for example `2024.mp3`) becomes `001 - .mp3`, because nothing remains after cleaning.
-- If the last number needs more digits than your chosen padding (for example 1000 files with padding 3), the tool prints a note and does not pad further.
-- Only `.mp3` files are touched. All other files are left alone.
-- If the tool is interrupted in the middle of renaming, some files may keep the `.tmp_renaming` suffix. Rename them back manually by removing that suffix.
+- **No undo after confirmation.** The preview is the safety net; once you type `y`, renaming happens immediately and there is no automatic rollback. Consider trying the tool on a **copy** of your folder the first time.
+- **Padding does not auto-expand.** If the last number needs more digits than your chosen padding (for example 1000 files with padding 3), the tool prints a note and does not pad further.
+- **Only `.mp3` files are touched.** All other files in the folder are left alone.
+- **No automated test suite.** Behavior has been checked manually against a range of file-name patterns, not with CI or unit tests.
 
 ---
 
@@ -141,7 +174,7 @@ Check the path for typos. On Termux, run `termux-setup-storage` first and use a 
 The tool only looks inside the folder you gave it, not its sub-folders, and only for files ending in `.mp3`.
 
 **Some files end with `.tmp_renaming`**
-The run was interrupted. Remove the `.tmp_renaming` suffix from those file names and run the tool again.
+The run was interrupted mid-rename. Remove the `.tmp_renaming` suffix from those file names and run the tool again.
 
 ---
 
