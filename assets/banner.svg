@@ -1,0 +1,20 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="300" fill="#0d1117"/>
+  <rect x="0" y="0" width="1200" height="300" fill="none" stroke="#21262d" stroke-width="2"/>
+  <text x="60" y="130" font-family="Verdana, Arial, sans-serif" font-size="46" font-weight="bold" fill="#f0f6fc">MP3 Renumber</text>
+  <text x="60" y="172" font-family="Verdana, Arial, sans-serif" font-size="20" fill="#8b949e">Clean and renumber MP3 file names, with a safe preview</text>
+  <text x="60" y="210" font-family="Verdana, Arial, sans-serif" font-size="16" fill="#484f58">Python · Zero dependencies</text>
+
+  <g font-family="Verdana, Arial, sans-serif" font-size="18" font-weight="bold">
+    <rect x="870" y="70" width="70" height="40" rx="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="905" y="96" fill="#f59e0b" text-anchor="middle">001</text>
+
+    <rect x="960" y="110" width="70" height="40" rx="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="995" y="136" fill="#f59e0b" text-anchor="middle">002</text>
+
+    <rect x="1050" y="150" width="70" height="40" rx="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="1085" y="176" fill="#f59e0b" text-anchor="middle">003</text>
+  </g>
+  <path d="M870 220 L1120 220" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M1110 214 L1120 220 L1110 226" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>
