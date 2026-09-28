@@ -178,7 +178,7 @@ The run was interrupted mid-rename. Remove the `.tmp_renaming` suffix from those
 
 ---
 
-## <img src="./assets/icons/features.svg" alt="" width="24" height="24" align="absmiddle"> Contributing
+## <img src="./assets/icons/contributing.svg" alt="" width="24" height="24" align="absmiddle"> Contributing
 
 Issues and pull requests are welcome. Ideas for future improvements:
 
