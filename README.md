@@ -22,7 +22,7 @@ Ideal for lecture series, audiobooks, podcasts, and any collection where file or
 
 ---
 
-## <img src="./assets/icons/number.svg" alt="" width="28" height="28" align="absmiddle"> Table of contents
+## <img src="./assets/icons/number.svg" alt="" width="24" height="24" align="absmiddle"> Table of contents
 
 - [Why this tool](#why-this-tool)
 - [Features](#features)
@@ -37,7 +37,7 @@ Ideal for lecture series, audiobooks, podcasts, and any collection where file or
 
 ---
 
-## <img src="./assets/icons/number.svg" alt="" width="28" height="28" align="absmiddle"> Why this tool
+## <img src="./assets/icons/number.svg" alt="" width="24" height="24" align="absmiddle"> Why this tool
 
 Downloaded audio series rarely have clean, consistent file names. Numbers show up at the start, in the middle, wrapped in brackets, or not at all — and players sort inconsistently as a result. Renaming a large folder by hand is slow and error-prone.
 
@@ -45,22 +45,22 @@ This tool automates that cleanup in one pass: strip whatever numbering exists, r
 
 ---
 
-## <img src="./assets/icons/sort.svg" alt="" width="28" height="28" align="absmiddle"> Features
+## <img src="./assets/icons/sort.svg" alt="" width="24" height="24" align="absmiddle"> Features
 
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Preview before renaming** – see every old → new name first, and nothing is touched until you confirm with `y`.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Natural sorting** – files are ordered the way a human expects (`2` comes before `10`), not alphabetically.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Cleans old numbering anywhere in the name** – not only at the start. Numbers such as `03`, `(3)`, `[3]`, `#3` are removed wherever they appear.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Safe with words containing digits** – `MP3`, `4K`, `2Pac` are left untouched, because the digits are attached to letters and are not standalone numbers.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Custom start number** – begin at `1`, `101`, or any non-negative number.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Custom zero-padding** – `01`, `001`, `0001`, and so on.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Collision-safe renaming** – files are moved to temporary names first, so overlapping names never overwrite each other.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Unicode friendly** – works with Arabic and other non-Latin file names.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Zero dependencies** – uses only the Python standard library.
-<img src="./assets/icons/feature.svg" alt="" width="18" height="18" align="absmiddle"> **Cross-platform** – Windows, macOS, Linux, and Android (Termux).
+- **Preview before renaming** – see every old → new name first, and nothing is touched until you confirm with `y`.
+- **Natural sorting** – files are ordered the way a human expects (`2` comes before `10`), not alphabetically.
+- **Cleans old numbering anywhere in the name** – not only at the start. Numbers such as `03`, `(3)`, `[3]`, `#3` are removed wherever they appear.
+- **Safe with words containing digits** – `MP3`, `4K`, `2Pac` are left untouched, because the digits are attached to letters and are not standalone numbers.
+- **Custom start number** – begin at `1`, `101`, or any non-negative number.
+- **Custom zero-padding** – `01`, `001`, `0001`, and so on.
+- **Collision-safe renaming** – files are moved to temporary names first, so overlapping names never overwrite each other.
+- **Unicode friendly** – works with Arabic and other non-Latin file names.
+- **Zero dependencies** – uses only the Python standard library.
+- **Cross-platform** – Windows, macOS, Linux, and Android (Termux).
 
 ---
 
-## <img src="./assets/icons/requirements.svg" alt="" width="28" height="28" align="absmiddle"> Requirements
+## <img src="./assets/icons/requirements.svg" alt="" width="24" height="24" align="absmiddle"> Requirements
 
 - Python **3.6** or newer
 
@@ -74,7 +74,7 @@ pkg install python
 
 ---
 
-## <img src="./assets/icons/install.svg" alt="" width="28" height="28" align="absmiddle"> Installation
+## <img src="./assets/icons/install.svg" alt="" width="24" height="24" align="absmiddle"> Installation
 
 ```bash
 git clone https://github.com/eldqyqy2007/mp3-renumber.git
@@ -85,7 +85,7 @@ Or simply download `mp3_renumber.py` and run it directly.
 
 ---
 
-## <img src="./assets/icons/usage.svg" alt="" width="28" height="28" align="absmiddle"> Usage
+## <img src="./assets/icons/usage.svg" alt="" width="24" height="24" align="absmiddle"> Usage
 
 ```bash
 python3 mp3_renumber.py
@@ -101,7 +101,7 @@ The tool asks three questions, shows a preview, and then asks for confirmation:
 
 On Termux, the shared storage is available under `~/storage/shared/` after running `termux-setup-storage` once.
 
-### <img src="./assets/icons/section.svg" alt="" width="28" height="28" align="absmiddle"> Example session
+### <img src="./assets/icons/section.svg" alt="" width="24" height="24" align="absmiddle"> Example session
 
 ```text
 === MP3 Renumber Tool ===
@@ -131,7 +131,7 @@ Answer `n` at the confirmation prompt to cancel; no file is changed.
 
 ---
 
-## <img src="./assets/icons/sort.svg" alt="" width="28" height="28" align="absmiddle"> How it works
+## <img src="./assets/icons/sort.svg" alt="" width="24" height="24" align="absmiddle"> How it works
 
 1. **Scan** – collects all files ending in `.mp3` (case-insensitive) in the chosen folder. Sub-folders are not searched.
 2. **Sort** – orders them with a natural sort, splitting each name into text and number parts.
@@ -140,7 +140,7 @@ Answer `n` at the confirmation prompt to cancel; no file is changed.
 5. **Preview & confirm** – prints the complete list of old and new names and waits for `y` or `n`. Nothing has been changed at this point.
 6. **Rename safely** – after confirmation, renames every file to a temporary `.tmp_renaming` name first, then to its final name, so no file is ever overwritten.
 
-### <img src="./assets/icons/section.svg" alt="" width="28" height="28" align="absmiddle"> What counts as "old numbering"?
+### <img src="./assets/icons/section.svg" alt="" width="24" height="24" align="absmiddle"> What counts as "old numbering"?
 
 | Original name | Cleaned name | Why |
 |---|---|---|
@@ -153,7 +153,7 @@ Answer `n` at the confirmation prompt to cancel; no file is changed.
 
 ---
 
-## <img src="./assets/icons/limits.svg" alt="" width="28" height="28" align="absmiddle"> Honest limitations
+## <img src="./assets/icons/limits.svg" alt="" width="24" height="24" align="absmiddle"> Honest limitations
 
 - **Every standalone number is removed, not just the leading one.** A name like `Lecture 5 - Part 2` becomes `Lecture Part`. The preview lets you catch this before confirming — cancel with `n` if your titles contain numbers you want to keep (years, episode numbers, and so on).
 - **Separators inside a name may be merged.** Removing a number from the middle of a name can also drop the dash next to it (`Cool - Track 05` → `Cool Track`).
@@ -165,7 +165,7 @@ Answer `n` at the confirmation prompt to cancel; no file is changed.
 
 ---
 
-## <img src="./assets/icons/tooling.svg" alt="" width="28" height="28" align="absmiddle"> Troubleshooting
+## <img src="./assets/icons/tooling.svg" alt="" width="24" height="24" align="absmiddle"> Troubleshooting
 
 **"This path does not exist or is not a folder"**
 Check the path for typos. On Termux, run `termux-setup-storage` first and use a path under `~/storage/shared/`.
@@ -178,7 +178,7 @@ The run was interrupted mid-rename. Remove the `.tmp_renaming` suffix from those
 
 ---
 
-## <img src="./assets/icons/features.svg" alt="" width="28" height="28" align="absmiddle"> Contributing
+## <img src="./assets/icons/features.svg" alt="" width="24" height="24" align="absmiddle"> Contributing
 
 Issues and pull requests are welcome. Ideas for future improvements:
 
@@ -188,6 +188,6 @@ Issues and pull requests are welcome. Ideas for future improvements:
 
 ---
 
-## <img src="./assets/icons/license.svg" alt="" width="28" height="28" align="absmiddle"> License
+## <img src="./assets/icons/license.svg" alt="" width="24" height="24" align="absmiddle"> License
 
 This project is licensed under the [MIT License](LICENSE).
